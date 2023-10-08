@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between sm:p-24 p-4 pt-16 sm:pt-0 h-screen">
+    <main className="flex flex-col items-center justify-between sm:p-24 p-4 pt-16 sm:pt-0 h-screen max-w-7xl mx-auto">
       <div className="PageMid sm:flex-row flex-col flex w-full h-full gap-28 sm:gap-0 ">
         <div className="Left w-full flex flex-col justify-center items-center sm:items-start gap-4">
           <h1 className="text-3xl sm:text-6xl font-bold">Next.js ATX Meetup</h1>
@@ -38,18 +38,18 @@ const Signups = () => (
 const signups = [
   {
     title: "Luma",
-    href: "meetup.com",
+    href: "https://lu.ma/6ea9w6ri",
   },
   {
     title: "Meetup",
-    href: "meetup.com",
+    href: "https://www.meetup.com/next-js-atx",
   },
   {
     title: "LinkedIn",
-    href: "meetup.com",
+    href: "https://www.linkedin.com/company/next-js-atx",
   },
   {
     title: "Eventbrite",
-    href: "meetup.com",
+    href: "https://eventbrite.com",
   },
 ];
