@@ -1,9 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
+
+// Img
+import github from "@/app/img/github.svg";
+import discord from "@/app/img/discord.svg";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between sm:p-24 p-4 pt-16 sm:pt-0 h-screen max-w-7xl mx-auto">
-      <div className="PageMid sm:flex-row flex-col flex w-full h-full gap-28 sm:gap-0 ">
+    <main className="flex flex-col items-center justify-between gap-16 sm:gap-8 sm:p-24 p-4 pt-16 sm:pt-0 sm:h-screen max-w-7xl mx-auto">
+      <div className="PageMid sm:flex-row flex-col flex w-full h-full gap-20 sm:gap-0 ">
         <div className="Left w-full flex flex-col justify-center items-center sm:items-start gap-4">
           <h1 className="text-3xl sm:text-6xl font-bold">Next.js ATX Meetup</h1>
           <h2 className="text-2xl sm:text-4xl text-center sm:text-left">
@@ -16,6 +21,16 @@ export default function Home() {
             <Signups />
           </div>
         </div>
+      </div>
+      <div className="flex gap-4">
+        {links.map((link) => (
+          <Link key={link.title} href={link.href}>
+            <div className="flex items-center justify-center gap-2 p-4">
+              <Image src={link.image} alt={link.title} className="w-6 h-6" />
+              <span>{link.title}</span>
+            </div>
+          </Link>
+        ))}
       </div>
     </main>
   );
@@ -51,5 +66,18 @@ const signups = [
   {
     title: "Eventbrite",
     href: "https://eventbrite.com",
+  },
+];
+
+const links = [
+  {
+    title: "Discord",
+    href: "https://discord.gg/gkCkydB8b6",
+    image: discord,
+  },
+  {
+    title: "Github",
+    href: "https://github.com/jaydarius/nextjs-atx",
+    image: github,
   },
 ];
