@@ -25,12 +25,14 @@ export default async function Image() {
       <div
         style={{
           fontSize: 128,
-          background: "white",
+          background: "black",
           width: "100%",
           height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          color: "white",
+          padding: "0 20px",
         }}
       >
         Next.js ATX Meetup
