@@ -4,6 +4,7 @@ import Image from "next/image";
 // Img
 import github from "@/app/img/github.svg";
 import discord from "@/app/img/discord.svg";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -24,12 +25,14 @@ export default function Home() {
       </div>
       <div className="flex gap-4">
         {links.map((link) => (
-          <Link key={link.title} href={link.href}>
-            <div className="flex items-center justify-center gap-2 p-4">
-              <Image src={link.image} alt={link.title} className="w-6 h-6" />
-              <span>{link.title}</span>
-            </div>
-          </Link>
+          <Button key={link.title} asChild variant="ghost">
+            <Link href={link.href}>
+              <div className="flex items-center justify-center gap-2 p-4">
+                <Image src={link.image} alt={link.title} className="w-6 h-6" />
+                <span>{link.title}</span>
+              </div>
+            </Link>
+          </Button>
         ))}
       </div>
     </main>
@@ -39,13 +42,16 @@ export default function Home() {
 const Signups = () => (
   <ul className="flex flex-col w-72 gap-4">
     {signups.map((signup) => (
-      <Link
+      <Button
         key={signup.title}
-        href={signup.href}
-        className="border border-neutral-700 p-4 rounded-md"
+        asChild
+        variant="outline"
+        className="h-fit p-4"
       >
-        <span className="text-xl">{signup.title}</span>
-      </Link>
+        <Link href={signup.href}>
+          <span className="text-xl">{signup.title}</span>
+        </Link>
+      </Button>
     ))}
   </ul>
 );
