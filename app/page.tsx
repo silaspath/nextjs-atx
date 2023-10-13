@@ -53,7 +53,7 @@ const Signups = () => (
 const signups = [
   {
     title: "Luma",
-    href: "https://lu.ma/6ea9w6ri",
+    href: "https://lu.ma/next-atx",
   },
   {
     title: "Meetup",
